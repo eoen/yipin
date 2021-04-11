@@ -1,10 +1,5 @@
 <template>
 	<view class="content">
-	    <view class="header">
-	        <view class="title" :style="'color:'+template.color.color2">登录
-	        	<icon class="circular" type="crilce" size="14" :color="template.color.color1"></icon>
-	        </view>
-	    </view>
 	    <view class="login">
 	        <image class="logo" :src="shopData.shop_logo" />
 	        <view class="title" :style="'color:'+template.color.color2">{{shopData.shop_name}}</view>
