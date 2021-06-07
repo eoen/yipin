@@ -5,7 +5,7 @@
 			<text>{{brandInfo.mini_title}}</text>
 		</view>
 		<view v-if="brandInfo.mini_status" class="text">提供技术与平台服务</view>
-		<view class="text">v1.0.4</view>
+		<view class="text">v{{version}}</view>
 	</view>
 </template>
 
@@ -17,7 +17,8 @@
 		props: {},
 		data() {
 			return {
-				brandInfo: ''
+				brandInfo: '',
+				version: uni.getAccountInfoSync().miniProgram.version?uni.getAccountInfoSync().miniProgram.version:'1.0.0',
 			}
 		},
 		onReady() {

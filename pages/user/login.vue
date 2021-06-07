@@ -5,7 +5,7 @@
 	        <view class="title" :style="'color:'+template.color.color2">{{shopData.shop_name}}</view>
 	        <view class="text" :style="'color:'+template.color.color3">首次进入需要授权才能使用哦</view>
 	        <!-- <button class="userlogin" :style="'background-color:'+template.color.color1" open-type="getUserInfo" @getuserinfo="userlogin">授权登录</button> -->
-	       <view class="button" :style="'background-color:'+template.color.color1">立即登录<button @click="getUserInfoTap"></button></view>
+	       <view class="userlogin" :style="'background-color:'+template.color.color1">立即登录<button @click="getUserInfoTap"></button></view>
 	        <button class="userlogin navigateBack" @click="navigateBack()">暂不登陆</button>
 	    </view>
 	</view>
@@ -57,7 +57,7 @@
 								uni.hideLoading();
 								app.globalData.user = true;
 								uni.showToast({title: '授权登陆成功'});
-								uni.setStorage({key: '__yipinUserInfo',data: res.data});
+								uni.setStorage({key: '__yipinUserInfo',data: wes.data});
 								setTimeout(function () {
 									uni.navigateBack();
 								}, 500);
@@ -168,6 +168,15 @@
 	        border-radius:6rpx;
 	        margin-bottom:20rpx;
 			font-weight: 300;
+			position: relative;
+			button{
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				position: absolute;
+				opacity: 0;
+			}
 	    }
 	    .navigateBack{
 	        background-color:#f8f8f8;
